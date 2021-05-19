@@ -83,15 +83,7 @@ export class AppComponent {
     else if(sorter === "Rating: Low to High")
       this.display_movies = this.movies.sort((a,b) => (isNaN(parseInt(a.imdbRating)) ? 0 : parseInt(a.imdbRating)  ) 
       - (isNaN(parseInt(b.imdbRating) )? 0 : parseInt(b.imdbRating)));
-    else if(sorter === "Location: High to Low")
-    this.display_movies = this.movies.sort((a,b) => (isNaN(parseInt(a.location)) ? 0 : parseInt(a.location)  ) 
-    - (isNaN(parseInt(b.location) )? 0 : parseInt(b.location))).reverse();
-    else if(sorter === "Language: Latest First")
-      this.display_movies = this.movies.sort((a,b) => (isNaN(parseInt(a.language)) ? 0 : parseInt(a.language)) 
-      - (isNaN(parseInt(b.language)) ? 0 : parseInt(b.language))).reverse();
-    else if(sorter === "Title : Asc to Desc")
-      this.display_movies = this.movies.sort((a,b) => (isNaN(parseInt(a.title)) ? 0 : parseInt(a.title)) 
-      - (isNaN(parseInt(b.language)) ? 0 : parseInt(b.language)));
+  
     
   }
 
