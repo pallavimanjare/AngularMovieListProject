@@ -9,6 +9,8 @@ import { MillionNumberPipe } from 'src/million-number.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -17,13 +19,15 @@ import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
     MovieCardComponent,
     SearchBarComponent,
     MillionNumberPipe,
-    MovieDialogComponent
+    MovieDialogComponent,
+    MovieDetailComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    AppRoutingModule
   ],
   providers: [],
    bootstrap: [AppComponent]

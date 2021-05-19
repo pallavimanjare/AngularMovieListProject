@@ -32,26 +32,24 @@ export class AppComponent {
 "country", "content_rating", "budget", "title_year", "plot_keywords", "movie_imdb_link"];
   
 
-constructor(private moviesData : MovieService){}
-  //constructor( public dialog : MatDialog){
+constructor(private moviesData : MovieService , public dialog : MatDialog){}
 
-
-   //}
 
    openDialog() : void {
     
-   //  const dialogRef = this.dialog.open(MovieDialogComponent, {
+     const dialogRef = this.dialog.open(MovieDialogComponent, {
       
-     // width : '90%',
-       //data: { movie: this.popupMovie } 
-     //});
-     //dialogRef.afterClosed().subscribe(result =>{
+      width : '70%',
+       data: { movie: this.popupMovie } 
+     });
+     dialogRef.afterClosed().subscribe(result =>{
        //console.log('The dialog was closed.');
 
-     //});
+     });
    }
 
    showCard(movie: Movie){
+     alert('hiiiii');
      console.log("shoCard" + movie);
      if(movie != null){
       // this.shouldShowPopUp = true;

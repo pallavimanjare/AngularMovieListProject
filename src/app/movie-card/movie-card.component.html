@@ -5,5 +5,8 @@
     <h5 *ngIf="isValidNumber(movie.imdbRating)">Rated {{ movie.imdbRating }}</h5>
     <h5 *ngIf="!isValidNumber(movie.imdbRating)">Content Details not available.</h5>
     
-
+    <nav>
+        <a routerLink="/movileDetails">Movie Details</a>
+     
+      </nav>
 </div>

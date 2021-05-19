@@ -1,5 +1,6 @@
 <div>
-  <app-search-bar (sort_by_emitter) = "sort_by_emitter($event)" (search) = "searchString($event)"></app-search-bar>  
+  <app-search-bar (sort_by_emitter) = "sort_by_emitter($event)" (search) = "searchString($event)"></app-search-bar>
+  
     <div class="movie-card-wrapper" *ngFor = "let movie of display_movies">
     <app-movie-card (launchDetailsCard) = "showCard($event)" [movie] = "movie" ></app-movie-card>
       </div>
