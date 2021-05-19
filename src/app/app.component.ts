@@ -3,6 +3,7 @@ import { Movie } from './movie';
 import moviesList from '../app/moviesList.json';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
+import {MovieService} from './movie.service'
 
 
 export interface DialogData{
@@ -31,22 +32,23 @@ export class AppComponent {
 "country", "content_rating", "budget", "title_year", "plot_keywords", "movie_imdb_link"];
   
 
-  constructor( public dialog : MatDialog){
+constructor(private moviesData : MovieService){}
+  //constructor( public dialog : MatDialog){
 
 
-   }
+   //}
 
    openDialog() : void {
-    //  let mov = this.popupMovie;
-     const dialogRef = this.dialog.open(MovieDialogComponent, {
-      //  width: '250px',
-      width : '90%',
-       data: { movie: this.popupMovie } 
-     });
-     dialogRef.afterClosed().subscribe(result =>{
-       console.log('The dialog was closed.');
+    
+   //  const dialogRef = this.dialog.open(MovieDialogComponent, {
+      
+     // width : '90%',
+       //data: { movie: this.popupMovie } 
+     //});
+     //dialogRef.afterClosed().subscribe(result =>{
+       //console.log('The dialog was closed.');
 
-     });
+     //});
    }
 
    showCard(movie: Movie){
@@ -86,30 +88,27 @@ export class AppComponent {
   
     
   }
-
+  moviesJsonData : any;
   ngOnInit(){
-    this.getMovies();
+    this.moviesData.getMovies().subscribe((result:any)=>{
+      this.moviesJsonData = result.movies.movies;
+      this.display_movies = this.moviesJsonData.map(json => 
+        Object.assign(new Movie, {         
+          language: json.Language,
+          location: json.Location,
+          plot:json.Plot,
+          poster: json.Poster,
+          title:json.Title,
+          imdbRating: json.imdbRating,
+          listingType: json.listingType
 
-  }
-
-  getMovies(){
+        }));
+      this.movies = this.display_movies;
     
-    console.log("API Hit.");
-     //Serve the JSON file to the 
-        this.display_movies = moviesList.map(json => 
-          Object.assign(new Movie, {         
-            language: json.Language,
-            location: json.Location,
-            plot:json.Plot,
-            poster: json.Poster,
-            title:json.Title,
-            imdbRating: json.imdbRating,
-            listingType: json.listingType
-
-          }));
-        this.movies = this.display_movies;
-        
-      
+  
+    })
+  
   }
+
 
 }
