@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     SearchBarComponent,
     MillionNumberPipe,
     MovieDialogComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    DashboardComponent
   ],
   imports: [
     HttpClientModule,

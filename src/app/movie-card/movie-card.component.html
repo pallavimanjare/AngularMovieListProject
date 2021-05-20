@@ -4,9 +4,8 @@
     <h4>Location: {{ movie.location }}</h4>  
     <h5 *ngIf="isValidNumber(movie.imdbRating)">Rated {{ movie.imdbRating }}</h5>
     <h5 *ngIf="!isValidNumber(movie.imdbRating)">Content Details not available.</h5>
-    
+    <a routerLink="movieDetails" class="nav-link" routerLinkActive="active">Show More....</a>
     <nav>
-        <a routerLink="/movileDetails">Movie Details</a>
-     
+        
       </nav>
 </div>
