@@ -9,9 +9,9 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component'
 
 const routes: Routes = [
+  { path: '', component: DashboardComponent },    
+  { path: 'movieDetails/:id', component: MovieDetailComponent }
   
-  { path: 'movieDetails', component: MovieDetailComponent },
-  { path: '', component: DashboardComponent }  
 
 ];
 

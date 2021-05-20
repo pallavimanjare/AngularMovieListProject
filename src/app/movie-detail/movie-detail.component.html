@@ -1,3 +1,20 @@
 <div>
-  Movie Details 
+  <a routerLink="" class="nav-link" routerLinkActive="active">Back</a>
+  <div>
+    <img src="{{ movieData.Poster }}" class="poster" >
+  </div>
+  <br/>
+  <div>
+    <h3>{{ movieData.Title }}</h3>
+    <h4>Language : {{ movieData.Language }}</h4>
+    <h4>Location : {{ movieData.Location }}</h4>
+    
+    <h5 >Rated {{ movieData.imdbRating }}</h5>
+    <h5 >Content Details not available.</h5>
+    <h3>Story: {{ movieData.Plot }}</h3>  
+    <h4>listingType : {{ movieData.listingType }}</h4>
+    
+</div>
+
+  
 </div>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Movie } from './movie';
 import moviesList from '../app/moviesList.json';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
+
 import {MovieService} from './movie.service'
 import { Router } from '@angular/router';
 

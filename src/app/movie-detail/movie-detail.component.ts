@@ -21,21 +21,22 @@ export class MovieDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router) { }
     
-    movie : any;
-  
+    movie : Movie;
+    movieId : "";
+    movieData : any;
     
-  ngOnInit(): void {
-    alert('inside movie detail page');
-
+  ngOnInit(): void {    
+    this.movieId = this.route.snapshot.params.id;
+    this.getMovie(this.movieId);
   }
 
   //later will implement api for this.
   getMovie(id): void {
-    this.movieService.getMovieById(id)
-      .subscribe(
-        movie => {
-          this.currentmovie = movie;
-          alert(movie);
+    this.movieService.getMovieById(id) .subscribe(   movie => {
+          this.movieData = movie.movie;   
+          
+        
+              
         },
         error => {
           console.log(error);

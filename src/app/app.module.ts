@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MillionNumberPipe } from 'src/million-number.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MovieDialogComponent } from './movie-dialog/movie-dialog.component';
+
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,7 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MovieCardComponent,
     SearchBarComponent,
     MillionNumberPipe,
-    MovieDialogComponent,
+    
     MovieDetailComponent,
     DashboardComponent
   ],

@@ -1,7 +1,6 @@
 export class Movie {
 
-    id: number = -1;
- 
+    id: number = -1; 
     location: string= "";
     language : string="";
     plot: string= "";

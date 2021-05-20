@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../movie';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { MovieDialogComponent } from '../movie-dialog/movie-dialog.component';
+
 import {MovieService} from '../movie.service'
 import { Router } from '@angular/router';
 
@@ -23,28 +23,17 @@ export class DashboardComponent implements OnInit {
   movies: Movie[] = new Array();
   display_movies: Movie[] ;
 
-  constructor(private moviesData : MovieService , public dialog : MatDialog,private router: Router ){}
+  constructor(private moviesData : MovieService , private router: Router ){}
 
-  openDialog() : void {
-    
-     const dialogRef = this.dialog.open(MovieDialogComponent, {
-      
-      width : '70%',
-       data: { movie: this.popupMovie } 
-     });
-     dialogRef.afterClosed().subscribe(result =>{
-       //console.log('The dialog was closed.');
-
-     });
-   }
+ 
    showCard(movie: Movie){
      
     console.log("shoCard" + movie);
     if(movie != null){
-     
+     alert(movie.id);
     // this.popupMovie = movie;
      //this.openDialog();
-     this.router.navigate(['/movieDetails']);
+     this.router.navigate(['/movieDetails/'+movie.id]);
     }
   }
   
@@ -89,7 +78,8 @@ export class DashboardComponent implements OnInit {
           poster: json.Poster,
           title:json.Title,
           imdbRating: json.imdbRating,
-          listingType: json.listingType
+          listingType: json.listingType,
+          id:json.id
 
         }));
       this.movies = this.display_movies;
