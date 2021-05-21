@@ -1,20 +1,21 @@
-<div>
-  <a routerLink="" class="nav-link" routerLinkActive="active">Back</a>
-  <div>
-    <img src="{{ movieData.Poster }}" class="poster" >
-  </div>
-  <br/>
-  <div>
-    <h3>{{ movieData.Title }}</h3>
-    <h4>Language : {{ movieData.Language }}</h4>
-    <h4>Location : {{ movieData.Location }}</h4>
-    
-    <h5 >Rated {{ movieData.imdbRating }}</h5>
-    <h5 >Content Details not available.</h5>
-    <h3>Story: {{ movieData.Plot }}</h3>  
-    <h4>listingType : {{ movieData.listingType }}</h4>
-    
-</div>
+
+
+
+<table>
+  <tr><td colspan="2">  <div class="back-buton"><a routerLink="" class="nav-link" routerLinkActive="active">Back</a></div>
+  </td></tr>
+<tr><td><table><tr><td class="left-column">Title</td><td class="right-column"><h3>{{ movieData.Title }}</h3></td></tr>
+  <tr><td class="left-column">Language</td><td class="right-column"><h3>{{ movieData.Language }}</h3></td></tr>
+  <tr><td class="left-column">Location</td><td class="right-column"><h3>{{ movieData.Location }}</h3></td></tr>
+  <tr><td class="left-column">Rated</td><td class="right-column"><h3>{{ movieData.imdbRating }}</h3></td></tr>
+  <tr><td class="left-column">Story</td><td class="right-column"><h3>{{ movieData.Plot }}</h3></td></tr>
+  <tr><td class="left-column">Listing Type</td><td class="right-column"><h3>{{ movieData.listingType }}</h3></td></tr>
+</table>
+</td><td>  <div class="poster">
+  <img src="{{ movieData.Poster }}"  >
+</div></td></tr>
+
+</table>
 
   
-</div>
+

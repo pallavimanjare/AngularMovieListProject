@@ -1,8 +1,21 @@
 .poster{
-    width:"200";
-     height:"200";
+    width:"200px";
+     height:"200px";
+     margin-left: 5%;
 }
 
 h3{
     text-align: center;
+}
+back-buton{
+    margin-top: 20%;
+    font-size: 30px;
+}
+left-column{
+    text-align: center;
+    width: 30%;
+}
+right-column{
+    text-align: left;
+    width: 70%;
 }

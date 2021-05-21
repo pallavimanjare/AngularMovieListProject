@@ -1,3 +1,5 @@
 .search-bar{
-    display: block;
+    align-self: center;
+    margin-top: 5%;
+    text-align: center;
 }
